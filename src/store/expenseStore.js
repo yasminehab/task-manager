@@ -16,7 +16,6 @@ export const useExpenseStore = create(
         })),
       setFilter: (category) => set({ filter: category }),
 
-      // ✅ Convert `filteredExpenses` into a derived state
       filteredExpenses: [],
     }),
     {
@@ -26,7 +25,6 @@ export const useExpenseStore = create(
   )
 );
 
-// ✅ Fix: Use `useExpenseStore.subscribe()` to automatically update `filteredExpenses`
 useExpenseStore.subscribe((state) => {
   const { expenses, filter } = state;
   state.filteredExpenses = filter

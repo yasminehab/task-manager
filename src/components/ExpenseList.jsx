@@ -1,7 +1,6 @@
 import React from "react";
 
 const ExpenseList = ({ expenses, deleteExpense }) => {
-  // Handle empty state
   if (!expenses || !Array.isArray(expenses) || expenses.length === 0) {
     return (
       <div className="flex justify-center items-center min-h-[50vh]">
